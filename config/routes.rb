@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #get 'users/new'
 
   root 'static_pages#home'
+  root 'chat_rooms#index'
   get  '/help',    to: 'static_pages#help'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :dashboard
+  resources :chat_rooms, only: [:new, :create, :show, :index]
 
 end
