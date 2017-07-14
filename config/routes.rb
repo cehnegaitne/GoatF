@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+mount ActionCable.server => '/cable'
+  get 'rooms/show'
+
   get 'users/new'
 
   #get 'users/new'
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get	'/rooms',   to: 'rooms#show'
 
   resources :users
   resources :dashboard
