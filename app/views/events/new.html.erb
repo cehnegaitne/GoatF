@@ -1,0 +1,14 @@
+<h1>Enter your shit</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event) do |f| %>
+      <%= f.label :eventname %>
+      <%= f.text_field :eventname %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.submit "Create my event", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

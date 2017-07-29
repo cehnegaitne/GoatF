@@ -1,0 +1,10 @@
+<h1>Create a new event</h1>
+<p class="lead"><%= link_to 'New Event', new_event_path, class: 'btn btn-primary' %></p>
+
+
+<h1>Join an existing event</h1>
+<% @event.each do |event| %>
+    <li>
+        <%= link_to Event.name, event %>
+    </li>
+<% end %>
