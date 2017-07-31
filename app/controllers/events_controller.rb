@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+    def index
+        @event = Event.all
+    end
+
     def new
         @event = Event.new 
     end
@@ -15,17 +19,13 @@ class EventsController < ApplicationController
     end
     
     def show
-        @event = Event.find(params[:id])
+        @event = Event.includes(:messages).find_by(id: params[:id])
+        @message = Message.new
     end
-    
+
+private
     def event_params
             params.require(:event).permit(:eventname, :description)
     end
-    
-    def index
-        @event = Event.all
-    end
-
-
 end
 

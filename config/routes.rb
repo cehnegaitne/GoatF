@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :events
+  devise_for :users
+
   resources :chat_rooms, only: [:new, :create, :show, :index]
-  get 'events/new'
+
   mount ActionCable.server => '/cable'
-  
-  root 'events#index'
+
+  root 'chat_rooms#index'
 end

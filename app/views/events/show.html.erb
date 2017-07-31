@@ -1,6 +1,24 @@
-<h1>hur</h1>
-<h2>HELLO ANYONE THERE</h2>
+<h1><%= @event.eventname %></h1>
+
+<h2><%= @event.description %></h2>
 <ul>
 Chatrooms
 <p class="lead"><%= link_to "Chat with strangers now! ( ͡° ͜ʖ ͡°)", new_chat_room_path, class: 'btn btn-primary' %></p>
 </ul>
+
+<div id="messages" data-chat-room-id="<%= @event.id %>">
+  <%= render @event.messages %>
+</div>
+
+<hr>
+
+<%= form_for @message, url: '#' do |f| %>
+  <%= hidden_field_tag 'event_id', @event.id %>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'form-control' %>
+    <small class="text-muted">From 2 to 1000 characters</small>
+  </div>
+
+  <%= f.submit "Post", class: 'btn btn-primary btn-lg' %>
+<% end %>

@@ -3,8 +3,6 @@
 
 
 <h1>Join an existing event</h1>
-<% @event.each do |event| %>
-    <li>
-        <%= link_to Event.name, event %>
-    </li>
-<% end %>
+<ul>
+  <%= render @event %>
+</ul>
