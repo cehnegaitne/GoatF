@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.1'
 gem "bcrypt", :require => "bcrypt"
 
 gem 'jquery-rails'
-
+gem 'rails_admin'
 
 gem 'omniauth-facebook'
 
