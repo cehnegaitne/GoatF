@@ -14,7 +14,7 @@ gem "bcrypt", :require => "bcrypt"
 gem 'jquery-rails'
 gem 'rails_admin'
 
-gem 'omniauth-facebook'
+gem "omniauth-facebook"
 
 gem 'bootstrap-sass'
 
